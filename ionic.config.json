@@ -1,0 +1,7 @@
+{
+  "name": "SantisimoPuzzle",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
