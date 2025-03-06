@@ -1,0 +1,50 @@
+<div class="game-container">
+  <h2>Puzzle de <span class="username">{{ username }}</span></h2>
+  <div *ngIf="juegoCompletado; else juegoEnCurso">
+    <h3>¡Enhorabuena, {{ username }}!</h3>
+    <p>Total de aciertos: {{ aciertos }} de 10</p>
+    <p>Total de fallos: {{ fallos }}</p>
+    <button (click)="reiniciarJuego()" class="action-button">Jugar de nuevo</button>
+  </div>
+  <ng-template #juegoEnCurso>
+    <div class="puzzle-container">
+      <div class="grid">
+        <div *ngFor="let celda of grid; let i = index"
+             class="cell"
+             (drop)="soltarPieza($event, i)"
+             (dragover)="permitirSoltar($event)">
+          <div *ngIf="piezas[i] !== null"
+               [ngStyle]="{'background-position': getBackgroundPosition(piezas[i]!)}"
+               class="puzzle-piece"
+               [style.background-image]="'url(' + imagenesPuzzle[puzzleActual] + ')'"
+               [style.background-size]="'300px 300px'"
+               draggable="true"
+               (dragstart)="arrastrarPieza($event, piezas[i]!, i)">
+          </div>
+        </div>
+      </div>
+      <div class="reference">
+        <img [src]="imagenesPuzzle[puzzleActual]" class="reference-image"/>
+      </div>
+    </div>
+    <div class="pieces-container">
+      <div *ngFor="let pieza of piezasDisponibles; let i = index"
+           class="puzzle-piece-container"
+           draggable="true"
+           (dragstart)="arrastrarPieza($event, pieza, null)">
+        <div [ngStyle]="{'background-position': getBackgroundPosition(pieza)}"
+             class="puzzle-piece"
+             [style.background-image]="'url(' + imagenesPuzzle[puzzleActual] + ')'"
+             [style.background-size]="'300px 300px'">
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <button (click)="verificar()" class="action-button">Verificar</button>
+      <button (click)="reiniciar()" class="action-button">Reiniciar este puzzle</button>
+    </div>
+    <p class="aciertos">Aciertos: {{ aciertos }}</p>
+    <p class="fallos">Fallos: {{ fallos }}</p>
+    <p *ngIf="mostrarIncorrecto" class="incorrecto">¡Incorrecto! Pasando al siguiente puzzle...</p>
+  </ng-template>
+</div>

@@ -1,0 +1,6 @@
+<div class="contenedor-login">
+  <h2>¡Bienvenido al Puzzle SAFA!</h2>
+  <input type="text" [(ngModel)]="nombreUsuario" placeholder="Escribe tu nombre" class="entrada-usuario"/>
+  <button (click)="iniciarJuego()" class="boton-iniciar">Iniciar</button>
+  <p *ngIf="mostrarError" class="mensaje-error">Por favor, ingrese un nombre de usuario.</p>
+</div>

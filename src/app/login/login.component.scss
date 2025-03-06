@@ -1,0 +1,46 @@
+.contenedor-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 20px;
+  background-color: #e0f7fa;
+}
+
+h2 {
+  color: #00796b;
+  font-size: 2rem;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.entrada-usuario {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #00796b;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 300px;
+}
+
+.boton-iniciar {
+  background-color: #00796b;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 80%;
+  max-width: 300px;
+  font-size: 1rem;
+}
+
+.boton-iniciar:hover {
+  background-color: #004d40;
+}
+
+.mensaje-error {
+  color: #d32f2f;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
