@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class PuzzleComponent implements OnInit {
 
-username = localStorage.getItem('username') || 'Jugador';
+username = sessionStorage.getItem('username') || 'Jugador';
   imagenesPuzzle = [
     'assets/imagenes/captura1.png',
     'assets/imagenes/captura2.png',
