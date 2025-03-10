@@ -22,9 +22,11 @@ export class LoginComponent {
   iniciarJuego() {
     if (this.nombreUsuario.trim()) {
       sessionStorage.setItem('nombreUsuario', this.nombreUsuario);
+      console.log('Guardado en sessionStorage:', sessionStorage.getItem('nombreUsuario')); // Debug
       this.router.navigate(['/puzzle']);
     } else {
       this.mostrarError = true;
     }
   }
+
 }

@@ -38,7 +38,10 @@ username = sessionStorage.getItem('username') || 'Jugador';
 
   ngOnInit() {
     this.cargarEstadoDesdeLocalStorage();
+    this.username = sessionStorage.getItem('nombreUsuario') || 'Jugador';
+    console.log('Valor de sessionStorage al cargar puzzle:', this.username); // Debug
   }
+
 
   cargarEstadoDesdeLocalStorage() {
     const estadoGuardado = localStorage.getItem('estadoPuzzle');
