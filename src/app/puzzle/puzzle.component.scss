@@ -1,7 +1,7 @@
 .game-container {
   text-align: center;
   padding: 20px;
-  background: linear-gradient(135deg, #00796b, #4c8e87);
+  background: linear-gradient(135deg, #00796b, #8dfaee);
   min-height: 100vh;
   color: white;
   display: flex;
@@ -116,14 +116,16 @@ h2 {
 
 .aciertos {
   font-size: 1.5rem;
-  color: #7aff6b;
+  color: #38ff00;
   margin-top: 20px;
+  text-shadow: 2px 2px 2px black
 }
 
 .fallos {
   font-size: 1.5rem;
-  color: #ff6b6b;
+  color: #ff0000;
   margin-top: 10px;
+
 }
 
 .incorrecto {
