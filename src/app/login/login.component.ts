@@ -21,7 +21,7 @@ export class LoginComponent {
 
   iniciarJuego() {
     if (this.nombreUsuario.trim()) {
-      localStorage.setItem('nombreUsuario', this.nombreUsuario);
+      sessionStorage.setItem('nombreUsuario', this.nombreUsuario);
       this.router.navigate(['/puzzle']);
     } else {
       this.mostrarError = true;
