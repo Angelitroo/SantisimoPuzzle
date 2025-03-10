@@ -39,7 +39,6 @@ username = sessionStorage.getItem('username') || 'Jugador';
   ngOnInit() {
     // Limpiar localStorage y sessionStorage
     localStorage.removeItem('estadoPuzzle');
-    sessionStorage.clear();
 
     // Reiniciar variables del juego
     this.puzzleActual = 0;
