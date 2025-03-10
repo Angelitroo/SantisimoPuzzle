@@ -5,10 +5,10 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "clean": "rimraf dist",
+    "start": "ng serve -o --proxy-config src/proxy.config.json",
+    "build": "ng build --configuration development",
     "watch": "ng build --watch --configuration development",
+    "clean": "rimraf dist",
     "test": "ng test",
     "lint": "ng lint"
   },
