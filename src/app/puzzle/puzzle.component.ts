@@ -37,14 +37,26 @@ username = sessionStorage.getItem('username') || 'Jugador';
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
-    localStorage.clear();
+    // Limpiar localStorage y sessionStorage
+    localStorage.removeItem('estadoPuzzle');
     sessionStorage.clear();
 
-    this.username = sessionStorage.getItem('nombreUsuario') || 'Jugador';
-    console.log('Valor de sessionStorage al cargar puzzle:', this.username);
+    // Reiniciar variables del juego
+    this.puzzleActual = 0;
+    this.aciertos = 0;
+    this.fallos = 0;
+    this.juegoCompletado = false;
 
+    this.grid.fill(null);
+    this.piezas.fill(null);
+
+    this.username = sessionStorage.getItem('nombreUsuario') || 'Jugador';
+    console.log('Valor de sessionStorage al cargar puzzle:', this.username); // Debug
+
+    // Cargar un nuevo puzzle desde cero
     this.cargarPuzzle();
   }
+
 
 
 
