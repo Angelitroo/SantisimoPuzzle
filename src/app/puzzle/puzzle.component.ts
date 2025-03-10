@@ -37,10 +37,15 @@ username = sessionStorage.getItem('username') || 'Jugador';
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
-    this.cargarEstadoDesdeLocalStorage();
+    localStorage.clear();
+    sessionStorage.clear();
+
     this.username = sessionStorage.getItem('nombreUsuario') || 'Jugador';
-    console.log('Valor de sessionStorage al cargar puzzle:', this.username); // Debug
+    console.log('Valor de sessionStorage al cargar puzzle:', this.username);
+
+    this.cargarPuzzle();
   }
+
 
 
   cargarEstadoDesdeLocalStorage() {
