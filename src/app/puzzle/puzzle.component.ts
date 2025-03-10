@@ -49,14 +49,16 @@ username = sessionStorage.getItem('username') || 'Jugador';
       const estado = JSON.parse(estadoGuardado);
       this.puzzleActual = estado.puzzleActual;
       this.aciertos = estado.aciertos;
-      this.fallos = estado.fallos;
+      this.fallos = estado.fallos; // Aquí se mantiene si hay estado guardado
       this.piezas = estado.piezas;
       this.piezasDisponibles = estado.piezasDisponibles;
       this.juegoCompletado = estado.juegoCompletado;
     } else {
+      this.fallos = 0; // Reinicia a 0 si no hay estado guardado
       this.cargarPuzzle();
     }
   }
+
 
   guardarEstadoEnLocalStorage() {
     const estado = {
