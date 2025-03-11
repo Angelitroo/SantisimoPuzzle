@@ -12,16 +12,14 @@ export class PuzzleComponent implements OnInit {
 
 username = sessionStorage.getItem('username') || 'Jugador';
   imagenesPuzzle = [
-    'assets/imagenes/captura1.png',
-    'assets/imagenes/captura2.png',
-    'assets/imagenes/captura3.png',
-    'assets/imagenes/captura4.png',
-    'assets/imagenes/captura5.png',
+    'assets/imagenes/captura14.png',
+    'assets/imagenes/captura13.png',
     'assets/imagenes/captura6.png',
-    'assets/imagenes/captura7.png',
-    'assets/imagenes/captura8.png',
     'assets/imagenes/captura9.png',
-    'assets/imagenes/captura10.png'
+    'assets/imagenes/captura11.png',
+    'assets/imagenes/captura12.png',
+    'assets/imagenes/captura4.png',
+    'assets/imagenes/captura1.png'
   ];
   puzzleActual = 0;
   aciertos = 0;
@@ -65,7 +63,7 @@ username = sessionStorage.getItem('username') || 'Jugador';
       const estado = JSON.parse(estadoGuardado);
       this.puzzleActual = estado.puzzleActual;
       this.aciertos = estado.aciertos;
-      this.fallos = estado.fallos; // Aquí se mantiene si hay estado guardado
+      this.fallos = estado.fallos;
       this.piezas = estado.piezas;
       this.piezasDisponibles = estado.piezasDisponibles;
       this.juegoCompletado = estado.juegoCompletado;

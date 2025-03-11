@@ -2,7 +2,7 @@
   <h2>Puzzle de <span class="username">{{ username }}</span></h2>
   <div *ngIf="juegoCompletado; else juegoEnCurso">
     <h3>¡Enhorabuena, {{ username }}!</h3>
-    <p>Total de aciertos: {{ aciertos }} de 10</p>
+    <p>Total de aciertos: {{ aciertos }} de 8</p>
     <p>Total de fallos: {{ fallos }}</p>
     <button (click)="reiniciarJuego()" class="action-button">Jugar de nuevo</button>
   </div>
